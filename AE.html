@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduAracaju - Alertas de Evasão</title>
+  <link rel="stylesheet" href="dash.css">
+  <link rel="stylesheet" href="AE.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-container">
+          <div class="logo-icon">🎓</div>
+          <div class="brand-text">
+            <h1>Echo School</h1>
+            <span>Gestão Educacional</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <p class="section-label">VISÃO GESTOR</p>
+          <a href="dash.html" class="nav-item">
+            <span class="icon">📊</span> Dashboard Executivo
+          </a>
+          <a href="UE.html" class="nav-item">
+            <span class="icon">🏢</span> Unidades Escolares
+          </a>
+          <a href="AE.html" class="nav-item active">
+            <span class="icon">⚠️</span> Alertas de Evasão
+            <span class="badge">5</span>
+          </a>
+          <a href="conf.html" class="nav-item">
+            <span class="icon">⚙️</span> Configurações
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <p class="section-label">PORTAIS DE ACESSO</p>
+          <a href="PA.html" class="nav-item external">
+            <span class="icon">🙂</span> Portal do Aluno
+            <span class="icon-right">↗</span>
+          </a>
+          <a href="PP.html" class="nav-item external">
+            <span class="icon">👨‍👩‍👧</span> Portal dos Pais
+            <span class="icon-right">↗</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sync-card">
+          <div class="sync-info">
+            <span class="icon-sync">🔄</span>
+            <div>
+              <p>Sincronizado</p>
+              <small>10:27</small>
+            </div>
+          </div>
+          <button class="btn-sync">Sync</button>
+        </div>
+        
+        <div class="user-profile">
+          <div class="avatar">AD</div>
+          <div class="user-info">
+            <p>Administrador</p>
+            <small>admin@semed.se.gov.br</small>
+          </div>
+         <a href="index.html" class="logout-link">
+          <span class="icon-logout">🚪</span></a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="page-header header-flex">
+        <div>
+          <h2>Alertas de Evasão</h2>
+          <p>Monitoramento e gestão de alunos em risco de abandono escolar</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn-outline">📥 Exportar</button>
+          <button class="btn-primary">🔄 Atualizar</button>
+        </div>
+      </header>
+
+      <section class="summary-cards">
+        <div class="summary-card card-gray">
+          <div class="summary-value">
+            <span class="icon-small">🕒</span> 3
+          </div>
+          <p>Pendentes</p>
+        </div>
+        <div class="summary-card card-yellow">
+          <div class="summary-value">
+            <span class="icon-small color-yellow">🔄</span> 2
+          </div>
+          <p>Em Andamento</p>
+        </div>
+        <div class="summary-card card-green">
+          <div class="summary-value">
+            <span class="icon-small color-green">✅</span> 1
+          </div>
+          <p>Resolvidos</p>
+        </div>
+        <div class="summary-card card-red">
+          <div class="summary-value">
+            <span class="icon-small color-red">⚡</span> 2
+          </div>
+          <p>Nível Crítico</p>
+        </div>
+      </section>
+
+      <div class="alerts-panel">
+        
+        <div class="tabs-container">
+          <button class="tab-item active" onclick="switchTab('ativos', this)">Alertas Ativos (5)</button>
+          <button class="tab-item" onclick="switchTab('historico', this)">Histórico (2)</button>
+        </div>
+
+        <div class="filters-bar">
+          <div class="search-box">
+            <span class="icon-search">🔍</span>
+            <input type="text" placeholder="Buscar aluno...">
+          </div>
+          <div class="select-group">
+            <select><option>Todos os riscos</option></select>
+            <select><option>Todos os status</option></select>
+            <select><option>Todas as escolas</option></select>
+          </div>
+        </div>
+
+        <div id="tab-ativos" class="tab-content active">
+          <div class="alerts-list">
+            
+            <div class="alert-item expanded">
+              <div class="alert-header-row">
+                <input type="checkbox" class="alert-checkbox">
+                <span class="status-dot dot-critical"></span>
+                <div class="student-info">
+                  <h4>João Pedro Santos</h4>
+                  <span class="badge-risk bg-critical">Crítico</span>
+                  <span class="badge-status-light">🕒 Pendente</span>
+                </div>
+              </div>
+              <p class="student-meta">E.M. Pedro Alves • 7º Ano • Aberto em 04/05/2026</p>
+              <div class="metrics-row">
+                <span class="metric-pill">15 faltas/mês</span>
+                <span class="metric-pill">8 consecutivas</span>
+                <span class="metric-pill">-40% notas</span>
+                <span class="metric-pill">9d sem presença</span>
+              </div>
+              <div class="action-row">
+                <button class="btn-action btn-blue">📞 Contatar</button>
+                <button class="btn-action btn-outline-green">✅ Resolver</button>
+                <button class="btn-action btn-outline-gray">❌ Ignorar</button>
+                <button class="btn-action btn-outline-gray" onclick="this.closest('.alert-item').classList.toggle('expanded')">👁️ Detalhes ↕</button>
+              </div>
+              <div class="details-section">
+                <h5>GATILHOS IDENTIFICADOS</h5>
+                <ul class="triggers-list">
+                  <li>⚠️ 15 faltas no mês</li>
+                  <li>⚠️ 8 faltas consecutivas</li>
+                  <li>⚠️ Queda de 40% nas notas</li>
+                  <li>⚠️ Sala com infraestrutura crítica</li>
+                </ul>
+                <h5 class="mt-4">OBSERVAÇÕES</h5>
+                <textarea placeholder="Adicionar observações sobre este aluno..."></textarea>
+                <button class="btn-primary mt-2">Salvar observação</button>
+              </div>
+            </div>
+
+            <div class="alert-item">
+              <div class="alert-header-row">
+                <input type="checkbox" class="alert-checkbox">
+                <span class="status-dot dot-critical"></span>
+                <div class="student-info">
+                  <h4>Maria Eduarda Lima</h4>
+                  <span class="badge-risk bg-critical">Crítico</span>
+                  <span class="badge-status-light bg-yellow-light">🔄 Em Andamento</span>
+                  <span class="badge-teacher">→ Profª Sandra Melo</span>
+                </div>
+              </div>
+              <p class="student-meta">E.M. Cecília Meireles • 9º Ano • Aberto em 07/05/2026</p>
+              <div class="metrics-row">
+                <span class="metric-pill">12 faltas/mês</span>
+                <span class="metric-pill">5 consecutivas</span>
+                <span class="metric-pill">-35% notas</span>
+                <span class="metric-pill">6d sem presença</span>
+              </div>
+              <div class="action-row">
+                <button class="btn-action btn-blue">📞 Contatar</button>
+                <button class="btn-action btn-outline-green">✅ Resolver</button>
+                <button class="btn-action btn-outline-gray">❌ Ignorar</button>
+                <button class="btn-action btn-outline-gray" onclick="this.closest('.alert-item').classList.toggle('expanded')">👁️ Detalhes ↕</button>
+              </div>
+              <div class="details-section">
+                <h5>GATILHOS IDENTIFICADOS</h5>
+                <ul class="triggers-list">
+                  <li>⚠️ 12 faltas no mês</li>
+                  <li>⚠️ 5 faltas consecutivas</li>
+                  <li>⚠️ Queda de 35% nas notas</li>
+                </ul>
+                <h5 class="mt-4">OBSERVAÇÕES</h5>
+                <textarea placeholder="Adicionar observações sobre este aluno..."></textarea>
+                <button class="btn-primary mt-2">Salvar observação</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div id="tab-historico" class="tab-content" style="display: none;">
+          <div class="alerts-list">
+            
+            <div class="alert-item">
+              <div class="alert-header-row">
+                <input type="checkbox" class="alert-checkbox">
+                <span class="status-dot dot-blue"></span>
+                <div class="student-info">
+                  <h4>Fernanda Costa Dias</h4>
+                  <span class="badge-risk bg-blue-light">Médio Risco</span>
+                  <span class="badge-status-light bg-green-light">✅ Resolvido</span>
+                  <span class="badge-teacher">→ Profª Ana Beatriz</span>
+                </div>
+              </div>
+              <p class="student-meta">E.M. Olímpio Campos • 9º Ano • Aberto em 05/05/2026</p>
+              <div class="metrics-row">
+                <span class="metric-pill pill-gray">6 faltas/mês</span>
+                <span class="metric-pill pill-gray">2 consecutivas</span>
+                <span class="metric-pill pill-gray">-18% notas</span>
+                <span class="metric-pill pill-gray">1d sem presença</span>
+              </div>
+              <div class="action-row">
+                <button class="btn-action btn-outline-gray" onclick="this.closest('.alert-item').classList.toggle('expanded')">👁️ Ver detalhes ↕</button>
+              </div>
+            </div>
+
+            <div class="alert-item">
+              <div class="alert-header-row">
+                <input type="checkbox" class="alert-checkbox">
+                <span class="status-dot dot-orange"></span>
+                <div class="student-info">
+                  <h4>Lucas Almeida Prado</h4>
+                  <span class="badge-risk bg-orange-light">Alto Risco</span>
+                  <span class="badge-status-light bg-gray-light">❌ Ignorado</span>
+                </div>
+              </div>
+              <p class="student-meta">E.M. Santos Dumont • 7º Ano • Aberto em 08/05/2026</p>
+              <div class="metrics-row">
+                <span class="metric-pill pill-gray">9 faltas/mês</span>
+                <span class="metric-pill pill-gray">4 consecutivas</span>
+                <span class="metric-pill pill-gray">-22% notas</span>
+                <span class="metric-pill pill-gray">5d sem presença</span>
+              </div>
+              <div class="action-row">
+                <button class="btn-action btn-outline-gray" onclick="this.closest('.alert-item').classList.toggle('expanded')">👁️ Ver detalhes ↕</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="panel-footer">
+          <span class="footer-status"><span class="dot-green"></span> Atualizado às 09:47 • 2 alerta(s) exibido(s)</span>
+          <span class="footer-total">Total: 7 alertas</span>
+        </div>
+
+      </div> 
+      </main>
+  </div>
+
+  <script>
+    function switchTab(tabId, clickedElement) {
+      const tabs = document.querySelectorAll('.tab-item');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      
+      clickedElement.classList.add('active');
+
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => content.style.display = 'none');
+
+      document.getElementById('tab-' + tabId).style.display = 'block';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echo School - Configurações</title>
+  <link rel="stylesheet" href="dash.css">
+  <link rel="stylesheet" href="conf.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-container">
+          <div class="logo-icon">🎓</div>
+          <div class="brand-text">
+            <h1>Echo School</h1>
+            <span>Gestão Educacional</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <p class="section-label">VISÃO GESTOR</p>
+          <a href="dash.html" class="nav-item">
+            <span class="icon">📊</span> Dashboard Executivo
+          </a>
+          <a href="UE.html" class="nav-item">
+            <span class="icon">🏢</span> Unidades Escolares
+          </a>
+          <a href="AE.html" class="nav-item">
+            <span class="icon">⚠️</span> Alertas de Evasão
+            <span class="badge">5</span>
+          </a>
+          <a href="conf.html" class="nav-item active">
+            <span class="icon">⚙️</span> Configurações
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <p class="section-label">PORTAIS DE ACESSO</p>
+          <a href="PA.html" class="nav-item external">
+            <span class="icon">🙂</span> Portal do Aluno
+            <span class="icon-right">↗</span>
+          </a>
+          <a href="PP.html" class="nav-item external">
+            <span class="icon">👨‍👩‍👧</span> Portal dos Pais
+            <span class="icon-right">↗</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sync-card">
+          <div class="sync-info">
+            <span class="icon-sync">🔄</span>
+            <div>
+              <p>Sincronizado</p>
+              <small>10:27</small>
+            </div>
+          </div>
+          <button class="btn-sync">Sync</button>
+        </div>
+        
+        <div class="user-profile">
+          <div class="avatar">AD</div>
+          <div class="user-info">
+            <p>Administrador</p>
+            <small>admin@semed.se.gov.br</small>
+          </div>
+          <a href="index.html" class="logout-link">
+          <span class="icon-logout">🚪</span></a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="page-header header-flex">
+        <div>
+          <h2>Configurações</h2>
+          <p>Personalize os limiares de alerta, notificações e acesso do sistema</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn-primary" style="background-color: #0f2041;">💾 Salvar alterações</button>
+        </div>
+      </header>
+
+      <div class="config-layout">
+        
+        <div class="config-sidebar">
+          <a href="#" class="config-nav-item active" onclick="switchConfigTab('limiares', this)">
+            <span class="icon">🎚️</span> Limiares de Alerta
+            <span class="icon-arrow">›</span>
+          </a>
+          <a href="#" class="config-nav-item" onclick="switchConfigTab('notificacoes', this)">
+            <span class="icon">🔔</span> Notificações
+            <span class="icon-arrow">›</span>
+          </a>
+          <a href="#" class="config-nav-item" onclick="switchConfigTab('usuarios', this)">
+            <span class="icon">👥</span> Usuários e Acesso
+            <span class="icon-arrow">›</span>
+          </a>
+          <a href="#" class="config-nav-item" onclick="switchConfigTab('sistema', this)">
+            <span class="icon">🗄️</span> Sistema & Integrações
+            <span class="icon-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="config-content">
+          
+          <div id="tab-limiares" class="config-section" style="display: block;">
+            <section class="settings-card border-yellow">
+              <div class="card-header">
+                <span class="icon-warning color-yellow">⚠️</span>
+                <div>
+                  <h3>Limiares de Risco Médio/Alto</h3>
+                  <p>Alunos que atingirem qualquer um destes valores serão classificados como risco médio ou alto.</p>
+                </div>
+              </div>
+              <div class="slider-group">
+                <div class="slider-header">
+                  <label>Faltas por mês</label>
+                  <span class="value-badge bg-blue-light">5 dias</span>
+                </div>
+                <input type="range" min="1" max="20" value="5" class="custom-slider">
+                <div class="slider-labels"><span>1 dias</span><span>20 dias</span></div>
+              </div>
+              <div class="slider-group">
+                <div class="slider-header">
+                  <label>Faltas consecutivas</label>
+                  <span class="value-badge bg-blue-light">3 dias</span>
+                </div>
+                <input type="range" min="1" max="10" value="3" class="custom-slider">
+                <div class="slider-labels"><span>1 dias</span><span>10 dias</span></div>
+              </div>
+              <div class="slider-group">
+                <div class="slider-header">
+                  <label>Queda no rendimento</label>
+                  <span class="value-badge bg-blue-light">20 %</span>
+                </div>
+                <input type="range" min="5" max="50" value="20" class="custom-slider">
+                <div class="slider-labels"><span>5 %</span><span>50 %</span></div>
+              </div>
+            </section>
+
+            <section class="settings-card border-red mt-4">
+              <div class="card-header">
+                <span class="icon-warning color-red">⚠️</span>
+                <div>
+                  <h3>Limiares de Risco Crítico</h3>
+                  <p>Alunos com risco crítico recebem alerta máximo e acionamento automático imediato.</p>
+                </div>
+              </div>
+              <div class="slider-group">
+                <div class="slider-header">
+                  <label>Faltas por mês</label>
+                  <span class="value-badge bg-red-light">10 dias</span>
+                </div>
+                <input type="range" min="5" max="30" value="10" class="custom-slider slider-red">
+                <div class="slider-labels"><span>5 dias</span><span>30 dias</span></div>
+              </div>
+            </section>
+          </div>
+
+          <div id="tab-notificacoes" class="config-section" style="display: none;">
+            <section class="settings-card">
+              <div class="card-header">
+                <span class="icon-warning color-blue">🔔</span>
+                <div>
+                  <h3>Canais de Notificação</h3>
+                  <p>Ative os canais pelos quais gestores e orientadores receberão alertas.</p>
+                </div>
+              </div>
+              
+              <div class="toggle-row">
+                <div>
+                  <h4>E-mail</h4>
+                  <p>Envio de alertas por e-mail aos responsáveis cadastrados</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="slider round"></span>
+                </label>
+              </div>
+
+              <div class="toggle-row">
+                <div>
+                  <h4>SMS</h4>
+                  <p>Mensagens de texto para celular (requer integração de operadora)</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox">
+                  <span class="slider round"></span>
+                </label>
+              </div>
+
+              <div class="toggle-row">
+                <div>
+                  <h4>WhatsApp</h4>
+                  <p>Notificações via WhatsApp Business API</p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked>
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </section>
+          </div>
+
+          <div id="tab-usuarios" class="config-section" style="display: none;">
+            <section class="settings-card">
+              <div class="card-header">
+                <span class="icon-warning color-blue">👥</span>
+                <div>
+                  <h3>Usuários e Permissões</h3>
+                  <p>Gerencie quem tem acesso ao sistema e seus papéis.</p>
+                </div>
+              </div>
+
+              <div class="user-list">
+                <div class="user-row">
+                  <div class="user-info-group">
+                    <div class="avatar bg-gray">A</div>
+                    <div>
+                      <h4>Administrador</h4>
+                      <p>admin@semed.se.gov.br • SEMED</p>
+                    </div>
+                  </div>
+                  <div class="user-actions">
+                    <span class="role-badge bg-blue-light">Administrador</span>
+                    <label class="toggle-switch"><input type="checkbox" checked><span class="slider round"></span></label>
+                  </div>
+                </div>
+
+                <div class="user-row">
+                  <div class="user-info-group">
+                    <div class="avatar bg-gray">SM</div>
+                    <div>
+                      <h4>Sandra Melo</h4>
+                      <p>sandra.melo@semed.se.gov.br • E.M. Cecília Meireles</p>
+                    </div>
+                  </div>
+                  <div class="user-actions">
+                    <span class="role-badge bg-blue-light">Psicóloga</span>
+                    <label class="toggle-switch"><input type="checkbox" checked><span class="slider round"></span></label>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div id="tab-sistema" class="config-section" style="display: none;">
+            <section class="settings-card">
+              <div class="card-header">
+                <span class="icon-warning color-blue">🗄️</span>
+                <div>
+                  <h3>Fontes de Dados</h3>
+                  <p>Integrações ativas com sistemas de frequência e notas.</p>
+                </div>
+              </div>
+
+              <div class="integration-list">
+                <div class="integration-row border-green">
+                  <div>
+                    <h4>Sistema de Frequência SEMED</h4>
+                    <p>Sincronizado há 18 min</p>
+                  </div>
+                  <span class="status-pill bg-green-light">Conectado</span>
+                </div>
+
+                <div class="integration-row border-yellow">
+                  <div>
+                    <h4>API de Notificações (WhatsApp)</h4>
+                    <p>Não configurado</p>
+                  </div>
+                  <span class="status-pill bg-yellow-light">Pendente de configuração</span>
+                </div>
+              </div>
+            </section>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function switchConfigTab(tabId, clickedElement) {
+      const tabs = document.querySelectorAll('.config-nav-item');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      
+      clickedElement.classList.add('active');
+
+      const contents = document.querySelectorAll('.config-section');
+      contents.forEach(content => content.style.display = 'none');
+
+      document.getElementById('tab-' + tabId).style.display = 'block';
+    }
+  </script>
+</body>
+</html>

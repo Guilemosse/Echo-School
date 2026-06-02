@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal do Aluno - Echo School</title>
+  <link rel="stylesheet" href="PA.css">
+</head>
+<body>
+  <div class="gradient-bg"></div>
+
+  <div class="portal-container">
+    <div class="back-nav">
+      <a href="dash.html" class="btn-back">← Voltar ao Painel Gestor</a>
+    </div>
+
+    <header class="student-header">
+      <div class="greeting">
+        <p>Olá, estudante!</p>
+        <h1>Sua Escola 💙</h1>
+      </div>
+      <div class="notification-bell">
+        <span>🔔</span>
+        <span class="badge-red">3</span>
+      </div>
+    </header>
+
+    <section class="mood-tracker">
+      <p>Como você está hoje?</p>
+      <div class="mood-buttons">
+        <button class="mood-btn">
+          <span class="mood-emoji">😀</span>
+          <span>Ótimo</span>
+        </button>
+        <button class="mood-btn">
+          <span class="mood-emoji">🙂</span>
+          <span>Bem</span>
+        </button>
+        <button class="mood-btn">
+          <span class="mood-emoji">☹️</span>
+          <span>Mal</span>
+        </button>
+      </div>
+    </section>
+
+    <nav class="portal-tabs">
+      <button class="tab-btn active" onclick="switchStudentTab('mural', this)">
+        <span class="icon">📢</span> Mural
+      </button>
+      <button class="tab-btn text-green" onclick="switchStudentTab('apoio', this)">
+        <span class="icon">💚</span> Apoio
+      </button>
+      <button class="tab-btn text-gray" onclick="switchStudentTab('relatar', this)">
+        <span class="icon">🔧</span> Relatar
+      </button>
+    </nav>
+
+    <main class="feed-section">
+      
+      <div id="tab-mural" class="student-content" style="display: block;">
+        <h2>Novidades e Avisos</h2>
+
+        <div class="feed-card">
+          <div class="card-icon bg-purple-light">🔬</div>
+          <div class="card-content">
+            <div class="card-title-row">
+              <h3>Feira de Ciências 2026</h3>
+              <span class="tag tag-purple">Evento</span>
+            </div>
+            <p>Apresente seu projeto e ganhe prêmios! Inscrições abertas até 20/05.</p>
+            <div class="card-footer">
+              <span class="date">📅 20 mai</span>
+              <a href="#" class="link-more">Saiba mais ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="feed-card">
+          <div class="card-icon bg-orange-light">👨‍👩‍👧</div>
+          <div class="card-content">
+            <div class="card-title-row">
+              <h3>Reunião de Pais – 1º Semestre</h3>
+              <span class="tag tag-orange">Reunião</span>
+            </div>
+            <p>Informamos que a reunião de pais será realizada no dia 28/05 às 18h.</p>
+            <div class="card-footer">
+              <span class="date">📅 28 mai</span>
+              <a href="#" class="link-more">Saiba mais ></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="feed-card">
+          <div class="card-icon bg-green-light">🧠</div>
+          <div class="card-content">
+            <div class="card-title-row">
+              <h3>Semana da Saúde Mental</h3>
+              <span class="tag tag-green">Saúde</span>
+            </div>
+            <p>De 19 a 23/05 teremos palestras, dinâmicas e rodas de conversa abertas a todos.</p>
+            <div class="card-footer">
+              <span class="date">📅 19-23 mai</span>
+              <a href="#" class="link-more">Saiba mais ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="feed-card">
+          <div class="card-icon bg-blue-light">🏆</div>
+          <div class="card-content">
+            <div class="card-title-row">
+              <h3>Olimpíadas Escolares de Matemática</h3>
+              <span class="tag tag-blue">Olimpíada</span>
+            </div>
+            <p>Inscreva-se para representar sua escola na olimpíada regional.</p>
+            <div class="card-footer">
+              <span class="date">📅 05 jun</span>
+              <a href="#" class="link-more">Saiba mais ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-apoio" class="student-content" style="display: none;">
+        <h2>Preciso de Apoio</h2>
+
+        <div class="support-card-main">
+          <div class="support-header">
+            <div class="icon-chat-bubble">💬</div>
+            <div>
+              <h3>Quero Conversar</h3>
+              <p>Fale com nossa equipe de psicologia escolar. É sigiloso e seguro.</p>
+            </div>
+          </div>
+          
+          <p class="select-label">Escolha um horário disponível:</p>
+          <div class="time-slots">
+            <button class="time-btn" onclick="selectTimeSlot(this)">Seg 10h</button>
+            <button class="time-btn" onclick="selectTimeSlot(this)">Ter 14h</button>
+            <button class="time-btn" onclick="selectTimeSlot(this)">Qua 09h</button>
+            <button class="time-btn" onclick="selectTimeSlot(this)">Qui 15h</button>
+            <button class="time-btn" onclick="selectTimeSlot(this)">Sex 11h</button>
+            <button class="time-btn" onclick="selectTimeSlot(this)">Sex 16h</button>
+          </div>
+          
+          <button class="btn-confirm-time" id="btnConfirmTime" disabled>Selecione um horário</button>
+        </div>
+
+        <div class="support-grid">
+          <button class="support-action-btn bg-support-blue">
+            <span class="icon-large">📖</span>
+            <span>Tutoria<br>Acadêmica</span>
+          </button>
+          <button class="support-action-btn bg-support-orange">
+            <span class="icon-large">🎵</span>
+            <span>Atividades<br>Extras</span>
+          </button>
+          <button class="support-action-btn bg-support-green">
+            <span class="icon-large">👥</span>
+            <span>Grupos de<br>Estudo</span>
+          </button>
+          <button class="support-action-btn bg-support-pink">
+            <span class="icon-large">🌅</span>
+            <span>Meditação<br>Guiada</span>
+          </button>
+        </div>
+
+        <div class="emergency-card">
+          <div class="emergency-info">
+            <span class="sos-icon">SOS</span>
+            <div>
+              <h4>Situação de Emergência?</h4>
+              <p>Ligue para o CVV: 188 (24h gratuito)</p>
+            </div>
+          </div>
+          <button class="btn-emergency">188</button>
+        </div>
+      </div>
+
+      <div id="tab-relatar" class="student-content" style="display: none;">
+        <h2>Reportar Problema na Escola</h2>
+
+        <div class="report-card">
+          <p class="form-label">Onde está o problema?</p>
+          
+          <div class="location-grid" id="locationGrid">
+            <button class="location-btn" onclick="selectLocation(this, 'Banheiro')">
+              <span class="icon-medium">🚽</span>
+              <span>Banheiro</span>
+            </button>
+            <button class="location-btn" onclick="selectLocation(this, 'Sala de Aula')">
+              <span class="icon-medium">🏫</span>
+              <span>Sala de Aula</span>
+            </button>
+            <button class="location-btn" onclick="selectLocation(this, 'Refeitório')">
+              <span class="icon-medium">🍽️</span>
+              <span>Refeitório</span>
+            </button>
+            <button class="location-btn" onclick="selectLocation(this, 'Quadra/Pátio')">
+              <span class="icon-medium">⚽</span>
+              <span>Quadra/Pátio</span>
+            </button>
+            <button class="location-btn" onclick="selectLocation(this, 'Biblioteca')">
+              <span class="icon-medium">📚</span>
+              <span>Biblioteca</span>
+            </button>
+            <button class="location-btn" onclick="selectLocation(this, 'Outro Local')">
+              <span class="icon-medium">📍</span>
+              <span>Outro Local</span>
+            </button>
+          </div>
+
+          <p class="form-label mt-4">Descreva o problema</p>
+          <textarea id="reportDescription" class="report-textarea" placeholder="Ex: O banheiro do 2º andar está com a torneira quebrada há 3 dias..."></textarea>
+
+          <div class="report-actions">
+            <button class="btn-report-outline">📷 Adicionar foto</button>
+            <button class="btn-report-primary" id="btnSubmitReport" onclick="submitReport()">🚀 Enviar Relato</button>
+          </div>
+
+          <p class="report-disclaimer">Seu relato é anônimo por padrão. A gestão será notificada imediatamente.</p>
+        </div>
+
+        <h3 class="history-title">Relatos Recentes da Escola</h3>
+        
+        <div id="reportsHistoryList">
+          <div class="history-item">
+            <div class="history-icon bg-gray">🚽</div>
+            <div class="history-info">
+              <h4>Torneira do banheiro</h4>
+              <span class="date">10/05</span>
+            </div>
+            <span class="status-badge status-progress">Em andamento</span>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    function switchStudentTab(tabId, clickedElement) {
+      const tabs = document.querySelectorAll('.tab-btn');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      
+      clickedElement.classList.add('active');
+
+      const contents = document.querySelectorAll('.student-content');
+      contents.forEach(content => content.style.display = 'none');
+
+      document.getElementById('tab-' + tabId).style.display = 'block';
+    }
+
+    function selectTimeSlot(btnElement) {
+      const allButtons = document.querySelectorAll('.time-btn');
+      allButtons.forEach(btn => btn.classList.remove('selected'));
+      
+      btnElement.classList.add('selected');
+      
+      const confirmBtn = document.getElementById('btnConfirmTime');
+      confirmBtn.textContent = 'Confirmar ' + btnElement.textContent;
+      confirmBtn.classList.add('active');
+      confirmBtn.disabled = false;
+    }
+
+    let selectedLocationValue = '';
+
+    function selectLocation(btnElement, locationName) {
+      const allBtns = document.querySelectorAll('.location-btn');
+      allBtns.forEach(btn => btn.classList.remove('selected'));
+      
+      btnElement.classList.add('selected');
+      selectedLocationValue = locationName;
+    }
+
+    function submitReport() {
+      const description = document.getElementById('reportDescription').value;
+      
+      if (!selectedLocationValue || !description.trim()) {
+        alert('Por favor, selecione um local e descreva o problema.');
+        return;
+      }
+
+      const today = new Date();
+      const dateString = String(today.getDate()).padStart(2, '0') + '/' + String(today.getMonth() + 1).padStart(2, '0');
+      
+      let icon = '📍';
+      if(selectedLocationValue === 'Banheiro') icon = '🚽';
+      else if(selectedLocationValue === 'Sala de Aula') icon = '🏫';
+      else if(selectedLocationValue === 'Refeitório') icon = '🍽️';
+      else if(selectedLocationValue === 'Quadra/Pátio') icon = '⚽';
+      else if(selectedLocationValue === 'Biblioteca') icon = '📚';
+
+      const newReportHTML = `
+        <div class="history-item new-item-animation">
+          <div class="history-icon bg-gray">${icon}</div>
+          <div class="history-info">
+            <h4>${selectedLocationValue}: ${description.substring(0, 25)}${description.length > 25 ? '...' : ''}</h4>
+            <span class="date">${dateString}</span>
+          </div>
+          <span class="status-badge status-new">Novo</span>
+        </div>
+      `;
+
+      const historyList = document.getElementById('reportsHistoryList');
+      historyList.insertAdjacentHTML('afterbegin', newReportHTML);
+
+      document.getElementById('reportDescription').value = '';
+      const allBtns = document.querySelectorAll('.location-btn');
+      allBtns.forEach(btn => btn.classList.remove('selected'));
+      selectedLocationValue = '';
+      
+      const btnSubmit = document.getElementById('btnSubmitReport');
+      const originalText = btnSubmit.innerHTML;
+      btnSubmit.innerHTML = '✅ Relato Enviado!';
+      btnSubmit.style.backgroundColor = '#38a169';
+      
+      setTimeout(() => {
+        btnSubmit.innerHTML = originalText;
+        btnSubmit.style.backgroundColor = '';
+      }, 2000);
+    }
+  </script>
+</body>
+</html>

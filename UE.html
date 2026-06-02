@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduAracaju - Unidades Escolares</title>
+  <link rel="stylesheet" href="UE.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-container">
+          <div class="logo-icon">🎓</div>
+          <div class="brand-text">
+            <h1>Echo School</h1>
+            <span>Gestão Educacional</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <p class="section-label">VISÃO GESTOR</p>
+          <a href="dash.html" class="nav-item">
+            <span class="icon">📊</span> Dashboard Executivo
+          </a>
+          <a href="UE.html" class="nav-item active">
+            <span class="icon">🏢</span> Unidades Escolares
+          </a>
+          <a href="AE.html" class="nav-item">
+            <span class="icon">⚠️</span> Alertas de Evasão
+            <span class="badge">2</span>
+          </a>
+          <a href="conf.html" class="nav-item">
+            <span class="icon">⚙️</span> Configurações
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <p class="section-label">PORTAIS DE ACESSO</p>
+          <a href="PA.html" class="nav-item external">
+            <span class="icon">🙂</span> Portal do Aluno
+            <span class="icon-right">↗</span>
+          </a>
+          <a href="PP.html" class="nav-item external">
+            <span class="icon">👨‍👩‍👧</span> Portal dos Pais
+            <span class="icon-right">↗</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sync-card">
+          <div class="sync-info">
+            <span class="icon-sync">🔄</span>
+            <div>
+              <p>Sincronizado</p>
+              <small>10:27</small>
+            </div>
+          </div>
+          <button class="btn-sync">Sync</button>
+        </div>
+        
+        <div class="user-profile">
+          <div class="avatar">AD</div>
+          <div class="user-info">
+            <p>Administrador</p>
+            <small>admin@semed.se.gov.br</small>
+          </div>
+          <a href="index.html" class="logout-link">
+          <span class="icon-logout">🚪</span></a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="page-header">
+        <h2>Unidades Escolares</h2>
+        <p>Rede municipal de ensino de Aracaju</p>
+      </header>
+
+      <div class="panel-card list-container">
+        <div class="list-header">
+          <div>
+            <span class="text-muted">Total de escolas</span>
+            <div class="kpi-value" style="margin: 0; font-size: 24px;">6</div>
+          </div>
+          <button class="btn-primary" style="width: auto; margin: 0; padding: 10px 20px;">Exportar Relatório</button>
+        </div>
+
+        <div class="school-list">
+          <div class="list-item">
+            <div class="item-icon icon-blue">🏢</div>
+            <div class="item-details">
+              <div class="item-title-row">
+                <h4>E.M. Prof. João Silva</h4>
+                <span class="badge-status bg-excellent">Excelente</span>
+              </div>
+              <p class="text-muted">📍 Rua A, 123, Bairro Norte</p>
+              <div class="item-metrics">
+                <span>👥 245 alunos</span>
+                <span>📈 Média: 8.2</span>
+              </div>
+            </div>
+            <a href="UE2.html" class="link-action">Ver detalhes ↗</a>
+          </div>
+
+          <div class="list-item">
+            <div class="item-icon icon-blue">🏢</div>
+            <div class="item-details">
+              <div class="item-title-row">
+                <h4>E.M. Maria Aparecida</h4>
+                <span class="badge-status bg-good" style="background: var(--bg-good); color: var(--border-good);">Bom</span>
+              </div>
+              <p class="text-muted">📍 Av. B, 456, Centro</p>
+              <div class="item-metrics">
+                <span>👥 198 alunos</span>
+                <span>📈 Média: 7.8</span>
+              </div>
+            </div>
+            <a href="UE2.html" class="link-action">Ver detalhes ↗</a>
+          </div>
+
+          <div class="list-item">
+            <div class="item-icon icon-blue">🏢</div>
+            <div class="item-details">
+              <div class="item-title-row">
+                <h4>E.M. Santos Dumont</h4>
+                <span class="badge-status bg-attention">Atenção</span>
+              </div>
+              <p class="text-muted">📍 Av. Tancredo Neves, 245, Centro</p>
+              <div class="item-metrics">
+                <span>👥 158 alunos</span>
+                <span>📉 Média: 7.2</span>
+              </div>
+            </div>
+            <a href="UE2.html" class="link-action">Ver detalhes ↗</a>
+          </div>
+
+          <div class="list-item">
+            <div class="item-icon icon-blue">🏢</div>
+            <div class="item-details">
+              <div class="item-title-row">
+                <h4>E.M. Pedro Alves</h4>
+                <span class="badge-status" style="background: var(--bg-critical); color: var(--color-negative);">Crítico</span>
+              </div>
+              <p class="text-muted">📍 Rua C, 789, Bairro Sul</p>
+              <div class="item-metrics">
+                <span>👥 312 alunos</span>
+                <span>📉 Média: 6.5</span>
+              </div>
+            </div>
+            <a href="UE2.html" class="link-action">Ver detalhes ↗</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

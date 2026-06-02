@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduAracaju - Detalhes da Escola</title>
+  <link rel="stylesheet" href="UE.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-container">
+          <div class="logo-icon">🎓</div>
+          <div class="brand-text">
+            <h1>EduAracaju</h1>
+            <span>Gestão Educacional</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <p class="section-label">VISÃO GESTOR</p>
+          <a href="index.html" class="nav-item">
+            <span class="icon">📊</span> Dashboard Executivo
+          </a>
+          <a href="unidades-escolares.html" class="nav-item active">
+            <span class="icon">🏢</span> Unidades Escolares
+          </a>
+          <a href="#" class="nav-item">
+            <span class="icon">⚠️</span> Alertas de Evasão
+            <span class="badge">2</span>
+          </a>
+          <a href="#" class="nav-item">
+            <span class="icon">⚙️</span> Configurações
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <p class="section-label">PORTAIS DE ACESSO</p>
+          <a href="PA.html" class="nav-item external">
+            <span class="icon">🙂</span> Portal do Aluno
+            <span class="icon-right">↗</span>
+          </a>
+          <a href="PP.html" class="nav-item external">
+            <span class="icon">👨‍👩‍👧</span> Portal dos Pais
+            <span class="icon-right">↗</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sync-card">
+          <div class="sync-info">
+            <span class="icon-sync">🔄</span>
+            <div>
+              <p>Sincronizado</p>
+              <small>10:27</small>
+            </div>
+          </div>
+          <button class="btn-sync">Sync</button>
+        </div>
+        
+        <div class="user-profile">
+          <div class="avatar">AD</div>
+          <div class="user-info">
+            <p>Administrador</p>
+            <small>admin@semed.se.gov.br</small>
+          </div>
+          <a href="index.html" class="logout-link">
+          <span class="icon-logout">🚪</span></a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="unidades-escolares.html" class="link-action">← Voltar para lista de escolas</a>
+      </div>
+
+      <header class="detail-header">
+        <div class="detail-title">
+          <h2>E.M. Santos Dumont</h2>
+          <p class="text-muted">Av. Tancredo Neves, 245, Centro, Aracaju/SE</p>
+        </div>
+        <span class="badge-large bg-attention">Atenção Requerida</span>
+      </header>
+
+      <section class="kpi-grid">
+        <div class="kpi-card">
+          <p class="kpi-title">👥 Total de Alunos</p>
+          <div class="kpi-value">158</div>
+        </div>
+        <div class="kpi-card">
+          <p class="kpi-title">📈 Média Geral</p>
+          <div class="kpi-value">7.2</div>
+        </div>
+        <div class="kpi-card">
+          <p class="kpi-title">🏢 Salas de Aula</p>
+          <div class="kpi-value">5</div>
+        </div>
+        <div class="kpi-card">
+          <p class="kpi-title">⚠️ Pendências</p>
+          <div class="kpi-value">3</div>
+        </div>
+      </section>
+
+      <div class="bottom-grid">
+        <section class="panel-card">
+          <h3>Evolução do Desempenho Acadêmico</h3>
+          <div class="chart-mockup line-chart"></div>
+          <div class="alert-box" style="background: var(--bg-critical); color: var(--color-negative);">
+            <strong>Alerta:</strong> Queda no 3º bimestre coincide com problemas de infiltração na Sala 5
+          </div>
+        </section>
+
+        <section class="panel-card">
+          <h3>Desempenho por Sala de Aula</h3>
+          <div class="chart-mockup bar-chart"></div>
+          <p class="text-muted mt-3"><strong>Correlação identificada:</strong> Sala 5 (média 5.9) possui infiltração ativa</p>
+        </section>
+        
+        <section class="panel-card" style="margin-top: 24px;">
+          <h3>🔧 Histórico de Manutenções</h3>
+          <div class="class-list mt-3">
+            <div class="class-row">
+              <div>
+                <small class="lbl-adequate">Preventiva</small>
+                <p style="margin-top: 8px; font-weight: 500;">Manutenção elétrica geral</p>
+              </div>
+              <span class="text-muted">Concluída</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel-card" style="margin-top: 24px;">
+          <h3>⚠️ Pendências Atuais</h3>
+          <div class="class-list mt-3">
+            <div class="class-row row-critical">
+              <div>
+                <small class="lbl-critical">ALTA</small>
+                <p style="margin-top: 8px; font-weight: 500;">Infiltração na sala 5 - afetando 35 alunos</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
