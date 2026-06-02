@@ -1,2 +1,8 @@
 # Echo-School
-Sistema de plataforma integrada para educação
+O Echo School é um sistema de gestão educacional pensado para conectar a administração da escola diretamente com a realidade do estudante. A solução vai muito além de um diário de classe digital, funcionando como um ecossistema preventivo e interativo.
+
+Para a equipe gestora, a ferramenta age como um centro de comando focado em dados. Ela junta os indicadores de todas as unidades escolares e automatiza o monitoramento da evasão. A plataforma percebe gatilhos de risco logo no início, como o acúmulo de faltas ou quedas bruscas de nota, e gera alertas para que os orientadores possam intervir antes do abandono se concretizar. O fluxo interno permite personalizar as réguas de risco e automatizar as mensagens para os responsáveis, garantindo uma rede de proteção ágil.
+
+Na rotina de quem está estudando, o ambiente se transforma em um portal de acolhimento. O painel centraliza eventos e novidades, mas seu diferencial está no suporte psicológico e na cidadania. O aluno pode registrar seu humor diário, agendar atendimentos sigilosos com a equipe de psicologia, explorar tutorias extras e acionar contatos de emergência. A ferramenta de relatos também empodera a comunidade estudantil, permitindo que os próprios alunos reportem problemas de infraestrutura em tempo real para acelerar a manutenção do prédio.
+
+Minha análise de fechamento aponta que a concepção do Echo School reflete a teoria contemporânea do cuidado escolar integral. Quando a tecnologia deixa de ser apenas um arquivo de avaliações e passa a operar como uma rede de segurança psicológica e administrativa, o engajamento aumenta naturalmente. Essa infraestrutura digital sustenta a retenção escolar através do acolhimento, criando um cenário onde a gestão ganha previsibilidade e o estudante encontra suporte contínuo.
