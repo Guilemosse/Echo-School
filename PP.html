@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal da Família - EduAracaju</title>
+  <link rel="stylesheet" href="PP.css">
+</head>
+<body>
+  <div class="family-gradient-bg"></div>
+
+  <div class="portal-container">
+    
+    <div class="back-nav">
+      <a href="dash.html" class="btn-back">← Voltar ao Painel Gestor</a>
+    </div>
+
+    <header class="family-header">
+      <div class="header-titles">
+        <p>Portal da Família</p>
+        <h1>Acompanhe seu filho(a)</h1>
+      </div>
+      <div class="profile-icon">
+        <span>👤</span>
+      </div>
+    </header>
+
+    <section class="kpi-row">
+      <div class="kpi-card-family">
+        <span class="kpi-icon">📊</span>
+        <h2>82%</h2>
+        <p>Frequência</p>
+      </div>
+      <div class="kpi-card-family">
+        <span class="kpi-icon">📚</span>
+        <h2>7.1</h2>
+        <p>Média Geral</p>
+      </div>
+      <div class="kpi-card-family">
+        <span class="kpi-icon">🔔</span>
+        <h2>2</h2>
+        <p>Alertas</p>
+      </div>
+    </section>
+
+    <nav class="family-tabs">
+      <button class="family-tab-btn active" onclick="switchFamilyTab('notificacoes', this)">
+        <span class="icon">🔔</span> Notificações
+        <span class="badge-red-small">2</span>
+      </button>
+      <button class="family-tab-btn" onclick="switchFamilyTab('responder', this)">
+        <span class="icon">📝</span> Responder
+      </button>
+      <button class="family-tab-btn" onclick="switchFamilyTab('contato', this)">
+        <span class="icon">📞</span> Contato
+      </button>
+    </nav>
+
+    <main class="family-main-content">
+      
+      <div id="tab-notificacoes" class="family-section" style="display: block;">
+        <div class="section-header-row">
+          <h2>Timeline de Ocorrências</h2>
+          <span class="text-muted-small">2 não lida(s)</span>
+        </div>
+
+        <div class="timeline-list">
+          <div class="timeline-card border-red">
+            <div class="card-header-flex">
+              <div class="icon-warning-triangle color-red">⚠️</div>
+              <div class="timeline-content">
+                <div class="timeline-badge-row">
+                  <span class="badge-pill bg-red-light color-red">Atenção</span>
+                  <span class="dot-unread"></span>
+                </div>
+                <h3>Falta não justificada</h3>
+                <p>Seu filho(a) não compareceu à escola hoje, 12/05.</p>
+                <span class="timeline-time">🕒 Hoje às 08:15</span>
+              </div>
+              <div class="dropdown-icon">⌄</div>
+            </div>
+          </div>
+
+          <div class="timeline-card border-green">
+            <div class="card-header-flex">
+              <div class="icon-warning-triangle color-green">🌟</div>
+              <div class="timeline-content">
+                <div class="timeline-badge-row">
+                  <span class="badge-pill bg-green-light color-green">Parabéns</span>
+                  <span class="dot-unread"></span>
+                </div>
+                <h3>Desempenho excelente em Matemática</h3>
+                <p>Seu filho(a) tirou 9.5 na prova bimestral de Matemática.</p>
+                <span class="timeline-time">🕒 Ontem às 17:30</span>
+              </div>
+              <div class="dropdown-icon">⌄</div>
+            </div>
+          </div>
+
+          <div class="timeline-card border-yellow">
+            <div class="card-header-flex">
+              <div class="icon-warning-triangle color-yellow">📉</div>
+              <div class="timeline-content">
+                <div class="timeline-badge-row">
+                  <span class="badge-pill bg-yellow-light color-yellow">Queda de Nota</span>
+                </div>
+                <h3>Rendimento em Português caiu</h3>
+                <p>A média em Língua Portuguesa passou de 7.5 para 5.8 este bimestre.</p>
+                <span class="timeline-time">🕒 10/05 às 14:00</span>
+              </div>
+              <div class="dropdown-icon">⌄</div>
+            </div>
+          </div>
+
+          <div class="timeline-card border-blue">
+            <div class="card-header-flex">
+              <div class="icon-warning-triangle color-blue">📅</div>
+              <div class="timeline-content">
+                <div class="timeline-badge-row">
+                  <span class="badge-pill bg-blue-light color-blue">Evento</span>
+                </div>
+                <h3>Reunião de Pais, 28/05</h3>
+                <p>Reunião de pais e mestres do 1º semestre às 18h na escola.</p>
+                <span class="timeline-time">🕒 09/05 às 09:00</span>
+              </div>
+              <div class="dropdown-icon">⌄</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-responder" class="family-section" style="display: none;">
+        
+        <div class="alert-info-box">
+          <div class="alert-info-icon">📉</div>
+          <div>
+            <h3>Por que este formulário?</h3>
+            <p>O sistema detectou queda na média de <strong>Língua Portuguesa</strong> sem causa estrutural identificada na escola. Sua resposta ajuda a equipe pedagógica a entender e apoiar melhor seu filho(a).</p>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-title">
+            <span class="question-number">1</span>
+            <h3>Houve alguma mudança significativa na rotina em casa recentemente?</h3>
+          </div>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="rotina" value="normal" onchange="updateFormProgress()">
+              <span class="custom-radio"></span>
+              Não, está tudo normal
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="rotina" value="horarios" onchange="updateFormProgress()">
+              <span class="custom-radio"></span>
+              Sim, mudança de horários
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="rotina" value="familiar" onchange="updateFormProgress()">
+              <span class="custom-radio"></span>
+              Sim, mudança familiar
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="rotina" value="sigilo" onchange="updateFormProgress()">
+              <span class="custom-radio"></span>
+              Prefiro não dizer
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-title">
+            <span class="question-number">2</span>
+            <h3>Como tem sido o sono do seu filho(a) nas últimas semanas?</h3>
+          </div>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="sono" value="bem" onchange="updateFormProgress()">
+              <span class="custom-radio"></span>
+              Dormindo bem
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="sono" value="menos" onchange="updateFormProgress()">
+              <span class="custom-radio"></span>
+              Dormindo menos que o normal
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="sono" value="dificuldade" onchange="updateFormProgress()">
+              <span class="custom-radio"></span>
+              Dificuldade para dormir
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="sono" value="naosei" onchange="updateFormProgress()">
+              <span class="custom-radio"></span>
+              Não sei dizer
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-title">
+            <span class="question-number">3</span>
+            <h3>Como você descreveria o humor do seu filho(a) ultimamente?</h3>
+          </div>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="humor" value="animado" onchange="updateFormProgress()">
+              <span class="custom-radio"></span>
+              Animado e feliz
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="humor" value="normal" onchange="updateFormProgress()">
+              <span class="custom-radio"></span>
+              Normal, sem grandes mudanças
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="humor" value="quieto" onchange="updateFormProgress()">
+              <span class="custom-radio"></span>
+              Mais quieto que o habitual
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="humor" value="irritado" onchange="updateFormProgress()">
+              <span class="custom-radio"></span>
+              Irritado ou ansioso
+            </label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-title">
+            <span class="question-number">4</span>
+            <h3>Seu filho(a) tem estudado em casa?</h3>
+          </div>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="estudo" value="todos" onchange="updateFormProgress()">
+              <span class="custom-radio"></span>
+              Sim, todos os dias
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="estudo" value="vezemquando" onchange="updateFormProgress()">
+              <span class="custom-radio"></span>
+              De vez em quando
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="estudo" value="raramente" onchange="updateFormProgress()">
+              <span class="custom-radio"></span>
+              Raramente
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="estudo" value="nao" onchange="updateFormProgress()">
+              <span class="custom-radio"></span>
+              Não está estudando
+            </label>
+          </div>
+        </div>
+
+        <div class="comments-card">
+          <h3 class="comments-title">Comentários adicionais (opcional)</h3>
+          <textarea class="comments-textarea" placeholder="Compartilhe qualquer informação que possa ser útil para a escola..."></textarea>
+        </div>
+
+        <button id="btnSubmitForm" class="btn-submit-form disabled" disabled onclick="submitFamilyForm()">
+          <span class="icon-send">📨</span> <span id="submitText">Responda todas as perguntas (0/4)</span>
+        </button>
+
+      </div>
+
+      <div id="tab-contato" class="family-section" style="display: none;">
+        <h2 class="mb-4">Fale com a Escola</h2>
+
+        <div class="contact-list">
+          <div class="contact-card border-blue-light">
+            <div class="contact-info-row">
+              <div class="contact-avatar">👩‍🏫</div>
+              <div class="contact-details">
+                <h4>Prof.ª Carla Mendonça</h4>
+                <p class="contact-role">Coordenação Pedagógica</p>
+                <p class="contact-time">🕒 Seg a Sex, 07h a 17h</p>
+              </div>
+            </div>
+            <div class="contact-actions">
+              <button class="btn-action-outline">📞 Ligar</button>
+              <button class="btn-action-outline">💬 Mensagem</button>
+            </div>
+          </div>
+
+          <div class="contact-card border-purple-light">
+            <div class="contact-info-row">
+              <div class="contact-avatar">👨‍⚕️</div>
+              <div class="contact-details">
+                <h4>Psic. Marcos Lima</h4>
+                <p class="contact-role">Orientação Psicopedagógica</p>
+                <p class="contact-time">🕒 Ter e Qui, 08h a 16h</p>
+              </div>
+            </div>
+            <div class="contact-actions">
+              <button class="btn-action-outline">📞 Ligar</button>
+              <button class="btn-action-outline">💬 Mensagem</button>
+            </div>
+          </div>
+
+          <div class="contact-card border-green-light">
+            <div class="contact-info-row">
+              <div class="contact-avatar">👩‍💼</div>
+              <div class="contact-details">
+                <h4>Dir. Ana Santos</h4>
+                <p class="contact-role">Direção</p>
+                <p class="contact-time">🕒 Seg a Sex, 07h a 17h</p>
+              </div>
+            </div>
+            <div class="contact-actions">
+              <button class="btn-action-outline">📞 Ligar</button>
+              <button class="btn-action-outline">💬 Mensagem</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    function switchFamilyTab(tabId, clickedElement) {
+      const tabs = document.querySelectorAll('.family-tab-btn');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      
+      clickedElement.classList.add('active');
+
+      const contents = document.querySelectorAll('.family-section');
+      contents.forEach(content => content.style.display = 'none');
+
+      document.getElementById('tab-' + tabId).style.display = 'block';
+    }
+
+    function updateFormProgress() {
+      const q1 = document.querySelector('input[name="rotina"]:checked');
+      const q2 = document.querySelector('input[name="sono"]:checked');
+      const q3 = document.querySelector('input[name="humor"]:checked');
+      const q4 = document.querySelector('input[name="estudo"]:checked');
+
+      let answered = 0;
+      if (q1) answered++;
+      if (q2) answered++;
+      if (q3) answered++;
+      if (q4) answered++;
+
+      const btn = document.getElementById('btnSubmitForm');
+      const text = document.getElementById('submitText');
+
+      if (answered === 4) {
+        btn.disabled = false;
+        btn.classList.remove('disabled');
+        btn.classList.add('ready');
+        text.textContent = 'Enviar Respostas';
+      } else {
+        btn.disabled = true;
+        btn.classList.remove('ready');
+        btn.classList.add('disabled');
+        text.textContent = 'Responda todas as perguntas (' + answered + '/4)';
+      }
+    }
+
+    function submitFamilyForm() {
+      const btn = document.getElementById('btnSubmitForm');
+      const text = document.getElementById('submitText');
+      
+      btn.style.backgroundColor = '#2f855a';
+      text.textContent = 'Respostas enviadas com sucesso!';
+      
+      setTimeout(() => {
+        switchFamilyTab('notificacoes', document.querySelector('.family-tab-btn'));
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
