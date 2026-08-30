@@ -1,0 +1,271 @@
+<!doctype html><html lang="pt-br"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Echo School - Dashboard Executivo</title><link rel="stylesheet" href="assets/app.css"></head><body><div class="app-container"><aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-container">
+          <div class="logo-icon">🎓</div>
+          <div class="brand-text"><h1>Echo School</h1><span>Gestão Educacional</span></div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <p class="section-label">VISÃO GESTOR</p>
+          <a href="dash.html" class="nav-item active"><span class="icon">📊</span> Dashboard Executivo</a>
+          <a href="UE.html" class="nav-item"><span class="icon">🏢</span> Unidades Escolares</a>
+          <a href="AE.html" class="nav-item"><span class="icon">⚠️</span> Alertas de Evasão <span class="badge">2</span></a>
+        </div>
+        <div class="nav-section academic-nav">
+          <p class="section-label">GESTÃO ACADÊMICA</p>
+          <a href="academico/cursos.html" class="nav-item"><span class="icon">🎓</span> Cursos</a>
+          <a href="academico/matrizes.html" class="nav-item"><span class="icon">🧩</span> Matrizes Curriculares</a>
+          <a href="academico/disciplinas.html" class="nav-item"><span class="icon">📚</span> Disciplinas</a>
+          <a href="academico/turmas.html" class="nav-item"><span class="icon">👥</span> Turmas</a>
+          <a href="academico/aulas-excepcionais.html" class="nav-item"><span class="icon">🗓️</span> Aulas Excepcionais <span class="badge badge-warning">8</span></a>
+        </div>
+        <div class="nav-section">
+          <p class="section-label">SISTEMA</p>
+          <a href="conf.html" class="nav-item"><span class="icon">⚙️</span> Configurações</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sync-card"><div class="sync-info"><span class="icon-sync">🔄</span><div><p>Sincronizado</p><small>10:27</small></div></div><button class="btn-sync" onclick="toast('Sincronização atualizada')">Sync</button></div>
+        <div class="user-profile"><div class="avatar">AD</div><div class="user-info"><p>Administrador</p><small>admin@semed.se.gov.br</small></div><a href="index.html" class="logout-link"><span class="icon-logout">🚪</span></a></div>
+      </div>
+    </aside><main class="main-content">
+      <header class="page-header">
+        <h2>Dashboard Executivo</h2>
+        <p>Visão integrada da rede municipal de ensino de Aracaju</p>
+      </header>
+<section><div class="section-title">Acesso rápido · Gestão Acadêmica</div><div class="quick-grid">
+<a class="module-card" href="academico/cursos.html"><div class="module-icon">🎓</div><strong>Cursos</strong><span>Cadastro, edição e situação</span></a>
+<a class="module-card" href="academico/matrizes.html"><div class="module-icon">🧩</div><strong>Matrizes Curriculares</strong><span>Estrutura por período e carga</span></a>
+<a class="module-card" href="academico/disciplinas.html"><div class="module-icon">📚</div><strong>Disciplinas</strong><span>Ementa, carga e pré-requisito</span></a>
+<a class="module-card" href="academico/turmas.html"><div class="module-icon">👥</div><strong>Turmas</strong><span>Vagas, horários e conflitos</span></a>
+<a class="module-card" href="academico/aulas-excepcionais.html"><div class="module-icon">🗓️</div><strong>Aulas Excepcionais</strong><span>Análise, decisão e deferimento</span></a>
+</div></section>
+
+      <section class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <div>
+              <p class="kpi-title">Total de Escolas</p>
+              <div class="kpi-value">127</div>
+            </div>
+            <span class="kpi-icon icon-blue">🏢</span>
+          </div>
+          <p class="kpi-trend positive">+3 novas unidades em 2026</p>
+        </div>
+        
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <div>
+              <p class="kpi-title">Alunos Matriculados</p>
+              <div class="kpi-value">45.832</div>
+            </div>
+            <span class="kpi-icon icon-green">👥</span>
+          </div>
+          <p class="kpi-trend positive">+2.3% vs ano anterior</p>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <div>
+              <p class="kpi-title">Alertas Ativos</p>
+              <div class="kpi-value">18</div>
+            </div>
+            <span class="kpi-icon icon-red">⚠️</span>
+          </div>
+          <p class="kpi-trend negative">4 críticos</p>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <div>
+              <p class="kpi-title">Média de Desempenho</p>
+              <div class="kpi-value">7.5</div>
+            </div>
+            <span class="kpi-icon icon-purple">📈</span>
+          </div>
+          <p class="kpi-trend positive">+0.4 pontos vs trimestre anterior</p>
+        </div>
+      </section>
+
+      <section class="heatmap-section">
+        <div class="section-header">
+          <h3>Mapa de Calor - Infraestrutura das Escolas</h3>
+          <div class="heatmap-legend">
+            <span class="legend-item"><i class="dot excellent"></i> Excelente</span>
+            <span class="legend-item"><i class="dot good"></i> Bom</span>
+            <span class="legend-item"><i class="dot attention"></i> Atenção</span>
+            <span class="legend-item"><i class="dot critical"></i> Crítico</span>
+          </div>
+        </div>
+        
+        <div class="heatmap-grid">
+          <div class="school-card status-excellent">
+            <div class="card-top"><span>🏢</span> <i class="indicator-dot"></i></div>
+            <h4>E.M. Prof. João Silva</h4>
+            <p class="status-text">✨ Excelente</p>
+            <p class="meta-text">Última inspeção: 09/05/2026</p>
+            <p class="meta-text">0 pendências</p>
+          </div>
+
+          <div class="school-card status-good">
+            <div class="card-top"><span>🏢</span> <i class="indicator-dot"></i></div>
+            <h4>E.M. Maria Aparecida</h4>
+            <p class="status-text">🔹 Bom</p>
+            <p class="meta-text">Última inspeção: 07/05/2026</p>
+            <p class="meta-text">2 pendências</p>
+          </div>
+
+          <div class="school-card status-attention">
+            <div class="card-top"><span>🏢</span> <i class="indicator-dot"></i></div>
+            <h4>E.M. Santos Dumont</h4>
+            <p class="status-text">🔸 Atenção</p>
+            <p class="meta-text">Última inspeção: 04/05/2026</p>
+            <p class="meta-text">5 pendências</p>
+          </div>
+
+          <div class="school-card status-critical">
+            <div class="card-top"><span>🏢</span> <i class="indicator-dot"></i></div>
+            <h4>E.M. Pedro Alves</h4>
+            <p class="status-text">❌ Crítico</p>
+            <p class="meta-text">Última inspeção: 27/04/2026</p>
+            <p class="meta-text">12 pendências</p>
+          </div>
+
+          <div class="school-card status-good">
+            <div class="card-top"><span>🏢</span> <i class="indicator-dot"></i></div>
+            <h4>E.M. Ana Costa</h4>
+            <p class="status-text">🔹 Bom</p>
+            <p class="meta-text">Última inspeção: 08/05/2026</p>
+            <p class="meta-text">1 pendências</p>
+          </div>
+
+          <div class="school-card status-excellent">
+            <div class="card-top"><span>🏢</span> <i class="indicator-dot"></i></div>
+            <h4>E.M. Carlos Drummond</h4>
+            <p class="status-text">✨ Excelente</p>
+            <p class="meta-text">Última inspeção: 10/05/2026</p>
+            <p class="meta-text">0 pendências</p>
+          </div>
+
+          <div class="school-card status-attention">
+            <div class="card-top"><span>🏢</span> <i class="indicator-dot"></i></div>
+            <h4>E.M. Cecília Meireles</h4>
+            <p class="status-text">🔸 Atenção</p>
+            <p class="meta-text">Última inspeção: 02/05/2026</p>
+            <p class="meta-text">7 pendências</p>
+          </div>
+
+          <div class="school-card status-good">
+            <div class="card-top"><span>🏢</span> <i class="indicator-dot"></i></div>
+            <h4>E.M. Monteiro Lobato</h4>
+            <p class="status-text">🔹 Bom</p>
+            <p class="meta-text">Última inspeção: 06/05/2026</p>
+            <p class="meta-text">3 pendências</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="bottom-grid">
+        
+        <section class="panel-card">
+          <h3>Diagnóstico: Desempenho × Infraestrutura</h3>
+          <p class="panel-subtitle">Média da turma vs. condição física da sala: ações automáticas sugeridas</p>
+          
+          <div class="alert-inline">⚠️ 1 sala(s) crítica(s)</div>
+          
+          <div class="chart-container-placeholder">
+            <div class="bar-chart-mock"></div>
+          </div>
+
+          <div class="class-list">
+            <div class="class-row">
+              <span>Sala 1 <small class="lbl-adequate">Adequada</small></span>
+              <strong>7.8</strong>
+            </div>
+            <div class="class-row">
+              <span>Sala 2 <small class="lbl-attention">Atenção</small></span>
+              <strong>7.4</strong>
+            </div>
+            <div class="class-row">
+              <span>Sala 3 <small class="lbl-adequate">Adequada</small></span>
+              <strong>7.9</strong>
+            </div>
+            <div class="class-row">
+              <span>Sala 4 <small class="lbl-attention">Atenção</small> <span class="trend-down">📉 Queda 0.6 pts</span></span>
+              <strong>6.4</strong>
+            </div>
+            <div class="class-row row-critical">
+              <span>Sala 5 <small class="lbl-critical">Crítica</small> <span class="trend-down">📉 Queda 1.5 pts</span></span>
+              <strong>5.3</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel-card">
+          <h3>⚡ Prevenção de Evasão em Tempo Real</h3>
+          <p class="panel-subtitle">Cruzamento de faltas consecutivas × queda de rendimento</p>
+          
+          <div class="risk-badges">
+            <span class="risk-badge badge-critical"><strong>2</strong> Crítico</span>
+            <span class="risk-badge badge-high"><strong>2</strong> Alto Risco</span>
+            <span class="risk-badge badge-medium"><strong>1</strong> Médio Risco</span>
+          </div>
+
+          <div class="student-list">
+            <div class="student-card border-critical">
+              <div class="student-header">
+                <div class="student-avatar bg-pink">JP</div>
+                <div class="student-meta">
+                  <h4>João Pedro Santos</h4>
+                  <p>E.M. Pedro Alves • 7º Ano</p>
+                </div>
+                <span class="tag-critical">Crítico</span>
+              </div>
+              <div class="student-metrics">
+                <div class="metric"><strong>15</strong> <small>Faltas/mês</small></div>
+                <div class="metric"><strong>8</strong> <small>Consecutivas</small></div>
+                <div class="metric color-red"><strong>-40%</strong> <small>Queda</small></div>
+              </div>
+              <p class="attendance-time">🕒 Última presença: 03/05/2026 (8 dias atrás)</p>
+              <div class="risk-bar-container">
+                <span>Índice de risco</span>
+                <div class="bar"><div class="fill fill-critical" style="width: 95%;"></div></div>
+                <span class="percentage">95%</span>
+              </div>
+              <div class="action-buttons">
+                <button class="btn-action-primary">📞 Contatar Responsável</button>
+                <button class="btn-action-secondary">✉️ E-mail</button>
+              </div>
+            </div>
+
+            <div class="student-card border-critical">
+              <div class="student-header">
+                <div class="student-avatar bg-pink">ME</div>
+                <div class="student-meta">
+                  <h4>Maria Eduarda Lima</h4>
+                  <p>E.M. Cecília Meireles • 9º Ano</p>
+                </div>
+                <span class="tag-critical">Crítico</span>
+              </div>
+              <div class="student-metrics">
+                <div class="metric"><strong>12</strong> <small>Faltas/mês</small></div>
+                <div class="metric"><strong>5</strong> <small>Consecutivas</small></div>
+                <div class="metric color-red"><strong>-35%</strong> <small>Queda</small></div>
+              </div>
+              <p class="attendance-time">🕒 Última presença: 06/05/2026 (5 dias atrás)</p>
+              <div class="risk-bar-container">
+                <span>Índice de risco</span>
+                <div class="bar"><div class="fill fill-critical" style="width: 95%;"></div></div>
+                <span class="percentage">95%</span>
+              </div>
+              <div class="action-buttons">
+                <button class="btn-action-primary">📞 Contatar Responsável</button>
+                <button class="btn-action-secondary">✉️ E-mail</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main></div><div id="toast" class="toast"></div><script src="assets/app.js"></script></body></html>
